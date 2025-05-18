@@ -7,7 +7,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: 'zionvanwyk.github.io/',
+  base: '/zionvanwyk.github.io/',
   plugins: [
     vue(),
     vueDevTools(),

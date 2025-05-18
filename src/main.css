@@ -1,0 +1,52 @@
+:root {
+  --primary: #E67E22;
+  --dark: #2C3E50; 
+  --light: #FDF5E6; 
+  --text: #333;
+  --bg: white;
+}
+
+[data-theme="dark"] {
+  --primary: #E67E22;
+  --dark: #121212;
+  --light: #1E1E1E;
+  --text: #FDF5E6;
+  --bg: #2C3E50;
+}
+
+* {
+  transition: background 0.3s, color 0.1s;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.profile-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 5px solid var(--dark);
+}
+
+@media (max-width: 768px) {
+  .profile-circle {
+    width: 150px;
+    height: 150px;
+  }
+}
