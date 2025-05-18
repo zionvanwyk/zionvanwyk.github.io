@@ -1,21 +1,27 @@
 :root {
-  --primary: #E67E22;
-  --dark: #2C3E50; 
-  --light: #FDF5E6; 
-  --text: #333;
-  --bg: white;
+  --primary: #ff6f00; 
+  --dark: #2e2e2e; 
+  --light: #fdf6ec; 
+  --text: #555;
 }
 
 [data-theme="dark"] {
-  --primary: #E67E22;
+  --primary: #ff6f00;
   --dark: #121212;
-  --light: #1E1E1E;
-  --text: #FDF5E6;
-  --bg: #2C3E50;
+  --light: #fdf6ec;
+  --text: #eee;
 }
 
 * {
   transition: background 0.3s, color 0.1s;
+}
+
+nav ul li:hover {
+  text-decoration: underline;
+}
+
+.social-icons a:hover {
+  color: var(--orange);
 }
 
 body {

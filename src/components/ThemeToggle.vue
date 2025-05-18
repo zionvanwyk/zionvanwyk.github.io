@@ -1,6 +1,7 @@
 <template>
-  <button @click="toggleTheme" class="theme-toggle">
-    {{ darkMode ? '☀️' : '🌙' }}
+  <button @click="toggleTheme" class="theme-btn">
+    <i :class="darkMode ? 'fas fa-sun' : 'fas fa-moon'"></i>
+    <span class="theme-text">{{ darkMode ? 'Light Mode' : 'Dark Mode' }}</span>
   </button>
 </template>
 
@@ -12,38 +13,44 @@ export default {
     }
   },
   mounted() {
-    this.darkMode = localStorage.getItem('theme') === 'dark'
-    this.applyTheme()
+    if (localStorage.getItem('theme') === 'dark') {
+      this.darkMode = true
+      document.documentElement.setAttribute('data-theme', 'dark')
+    }
   },
   methods: {
     toggleTheme() {
       this.darkMode = !this.darkMode
-      this.applyTheme()
-      localStorage.setItem('theme', this.darkMode ? 'dark' : 'light')
-    },
-    applyTheme() {
-      document.documentElement.setAttribute(
-        'data-theme',
-        this.darkMode ? 'dark' : 'light'
-      )
+      const theme = this.darkMode ? 'dark' : 'light'
+      document.documentElement.setAttribute('data-theme', theme)
+      localStorage.setItem('theme', theme)
     }
   }
 }
 </script>
 
 <style scoped>
-.theme-toggle {
-  background: var(--primary);
-  color: white;
+.theme-btn {
+  background: transparent;
   border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 1.2rem;
+  color: var(--light);
   cursor: pointer;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.theme-btn:hover {
+  color: var(--primary);
+}
+
+.theme-text {
+  font-weight: 500;
+}
+
+[data-theme="dark"] .theme-btn {
+  color: var(--light);
 }
 </style>

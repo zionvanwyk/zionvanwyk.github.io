@@ -1,33 +1,39 @@
 <template>
-  <div class="home">
-    <div class="container">
+  <main class="home">
+    <div class="hero">
       <div class="profile-circle">
-        <p>Image will go here.</p>
+        <img src="/profile.jpg" alt="Zion" />
       </div>
       
-      <h1>Zion van Wyk</h1>
-      <h2>Computer Science Graduate</h2>
-      
-      <p class="bio">
-        A passionate developer.
-      </p>
-      
-      <div class="social-links">
-        <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank">
-          <img :src="require(`../assets/icons/${social.icon}`)" :alt="social.name">
-        </a>
+      <div class="hero-content">
+        <h1>Zion</h1>
+        <p class="subtitle">A human.</p>
+        
+        <div class="social-links">
+          <a 
+            v-for="social in socials" 
+            :key="social.name" 
+            :href="social.url" 
+            target="_blank"
+            class="social-link"
+          >
+            <i :class="social.icon"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
 export default {
+  name: 'HomeView',
   data() {
     return {
       socials: [
-        { name: 'GitHub', url: 'https://github.com', icon: 'github.svg' },
-        { name: 'LinkedIn', url: 'https://linkedin.com', icon: 'linkedin.svg' },
+        { name: 'LinkedIn', url: '#', icon: 'fab fa-linkedin-in' },
+        { name: 'GitHub', url: '#', icon: 'fab fa-github' },
+        { name: 'Twitter', url: '#', icon: 'fab fa-twitter' }
       ]
     }
   }
@@ -36,35 +42,86 @@ export default {
 
 <style scoped>
 .home {
+  padding: 4rem 2rem;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 2rem 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border: 5px solid var(--dark);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-circle img {
+  width: 90%;
+  height: auto;
+  border-radius: 50%;
 }
 
 h1 {
-  color: var(--primary);
-  margin-top: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
 }
 
-.bio {
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text);
   max-width: 600px;
-  margin: 1rem auto;
+  margin: 0 auto 2rem;
   line-height: 1.6;
 }
 
 .social-links {
   display: flex;
+  gap: 1.5rem;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
 }
 
-.social-links img {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.3s;
+.social-link {
+  color: var(--dark);
+  font-size: 1.5rem;
+  transition: color 0.3s, transform 0.3s;
 }
 
-.social-links img:hover {
-  transform: scale(1.2);
+.social-link:hover {
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] .social-link {
+  color: var(--light);
+}
+
+@media (max-width: 768px) {
+  .profile-circle {
+    width: 180px;
+    height: 180px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
 }
 </style>
