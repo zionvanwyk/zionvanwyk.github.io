@@ -13,6 +13,7 @@ import Menubar from 'primevue/menubar';
 import MeterGroup from 'primevue/metergroup';
 import TabView from 'primevue/tabview';
 import TabPanel from 'primevue/tabpanel';
+import Timeline from 'primevue/timeline'
 
 
 
@@ -71,9 +72,10 @@ app.use(PrimeVue, {
 
 app.use(router)
 
-app.component('Menubar', Menubar);
+app.component('MenuBar', Menubar);
 app.component('MeterGroup', MeterGroup);
 app.component('TabView', TabView);
 app.component('TabPanel', TabPanel);
+app.component('TimeLine', Timeline);
 
 app.mount('#app')
