@@ -1,0 +1,61 @@
+:root {
+  --color-primary: #ff6f00;       /* Vivid orange */
+  --color-background: #121212;    /* Dark page bg */
+  --color-surface: #2e2e2e;       /* Card/panel bg */
+  --color-text: #fdf6ec;          /* Creamy light text */
+  --color-hover: #1e1e1e;         /* Slightly darker for hover */
+  --color-pressed: #333333;       /* Clicked state */
+  --color-focus-ring: #ff6f00;    /* Focus ring */
+  --border-radius: 8px;
+  --font-family: 'Segoe UI', sans-serif;
+  --font-size: 1rem;
+  --font-weight: 400;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: var(--font-weight);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff8515; /* Slightly lighter orange on hover */
+}
+
+button {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #e65c00;
+}
