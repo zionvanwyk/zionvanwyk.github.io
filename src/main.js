@@ -10,6 +10,11 @@ import { definePreset } from '@primevue/themes'
 
 import PrimeVue from 'primevue/config'
 import Menubar from 'primevue/menubar';
+import MeterGroup from 'primevue/metergroup';
+import TabView from 'primevue/tabview';
+import TabPanel from 'primevue/tabpanel';
+
+
 
 
 const app = createApp(App)
@@ -67,5 +72,8 @@ app.use(PrimeVue, {
 app.use(router)
 
 app.component('Menubar', Menubar);
+app.component('MeterGroup', MeterGroup);
+app.component('TabView', TabView);
+app.component('TabPanel', TabPanel);
 
 app.mount('#app')

@@ -27,7 +27,10 @@ export default {
       items: [
         { label: 'Home', icon: 'pi pi-home', to: '/' },
         { label: 'About', icon: 'pi pi-info-circle', to: '/about' },
-        { label: 'Projects', icon: 'pi pi-briefcase', to: '/projects' },
+        { label: 'Education', icon: 'pi pi-graduation-cap', to: '/education' },
+        { label: 'Experience', icon: 'pi pi-briefcase', to: '/experience' },
+        { label: 'Projects', icon: 'pi pi-desktop', to: '/projects' },
+        { label: 'Achievements', icon: 'pi pi-sparkles', to: '/achievements' },
         { label: 'Contact', icon: 'pi pi-envelope', to: '/contact' }
       ]
     };
